@@ -3,4 +3,22 @@
     <string name="email">email</string>
     <string name="password">password</string>
     <string name="accept">Accept</string>
+    <string name="mario_description">Protagonista de la saga de videojuegos</string>
+    <string name="mario_skills">Salta y dispara bolas de fuego</string>
+    <string name="luigi_description">Hermano de Mario</string>
+    <string name="luigi_skills">Sus habilidades son las mismas que las de su hermano Mario</string>
+    <string name="peach_description">Es la princesa del Reino Champiñon</string>
+    <string name="peach_skills">Es secuestrada con facilidad</string>
+    <string name="toad_description">Asistente de la princesa Peach</string>
+    <string name="toad_skills">Muy buena velocidad</string>
+    <string name="lakitu_description">Sirviente volar de Bowser</string>
+    <string name="lakitu_skills">Lanza objetos desde su nube</string>
+    <string name="dk_description">El primer enemigo de Mario</string>
+    <string name="dk_skills">Lanza barriles</string>
+    <string name="bowser_description">El archienemigo de Mario y del Reino Champiñon</string>
+    <string name="bowser_skills">Secuestrar a la princesa Peach</string>
+    <string name="yoshi_description">Dragon amigo de Mario</string>
+    <string name="yoshi_skills">Puede cargar con Mario, dispara fuego por la boca</string>
+    <string name="planta_description">Enemiga de Mario, se esconde en sus tuberias</string>
+    <string name="planta_skills">Da grandes mordiscos</string>
 </resources>

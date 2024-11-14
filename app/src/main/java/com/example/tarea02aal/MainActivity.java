@@ -1,26 +1,18 @@
 package com.example.tarea02aal;
 
-import android.media.Image;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.tarea02aal.databinding.ActivityMainBinding;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
-    ActivityMainBinding binding;
+    private ActivityMainBinding binding;
+    private ArrayList<Character> characters;
+    private CharRecyclerViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +26,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        // Añadimos eventos
-        binding.acceptButton.setOnClickListener((this::acceptPressed));
-        // acceptButton.setOnClickListener(this::acceptPressed);
+        characters = new ArrayList<>(Arrays.asList (
+            new Character(R.drawable.mario, "Mario", getString(R.string.mario_description), getString(R.string.mario_skills)),
+            new Character(R.drawable.luigi, "Luigi", getString(R.string.luigi_description), getString(R.string.luigi_skills)),
+            new Character(R.drawable.peach, "Peach", getString(R.string.peach_description), getString(R.string.peach_skills)),
+            new Character(R.drawable.toad, "Toad", getString(R.string.toad_description), getString(R.string.toad_skills)),
+            new Character(R.drawable.lakitu, "Lakitu", getString(R.string.lakitu_description), getString(R.string.lakitu_skills)),
+            new Character(R.drawable.dkong, "Donkey Kong", getString(R.string.dk_description), getString(R.string.dk_skills)),
+            new Character(R.drawable.bowser, "Bowser", getString(R.string.bowser_description), getString(R.string.bowser_skills)),
+            new Character(R.drawable.yoshi, "Yoshi", getString(R.string.yoshi_description), getString(R.string.yoshi_skills)),
+            new Character(R.drawable.planta, "Planta Piraña", getString(R.string.planta_description), getString(R.string.planta_skills))
+        ));
+
+        adapter = new CharRecyclerViewAdapter(characters, this);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        binding.recyclerView.setAdapter(adapter);
         
     }
 
-    private void acceptPressed(View view) {
-        binding.img.setVisibility(View.GONE);
-        System.out.println("Button Pressed");
-        Toast.makeText(this, "Button Pressed", Toast.LENGTH_SHORT).show();
-    }
 }
